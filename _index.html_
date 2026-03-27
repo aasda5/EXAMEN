@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Sistema de Autenticación</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-menu">
+            <h1>Sistema de Quiz</h1>
+            <div class="buttons">
+                <button onclick="showLogin()" class="btn-primary">Iniciar Sesión</button>
+                <button onclick="showRegister()" class="btn-secondary">Registrarse</button>
+            </div>
+        </div>
+
+        <div id="loginForm" style="display:none;" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="email" id="loginEmail" placeholder="Correo" required>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+                <button type="button" onclick="showMenu()" class="btn-cancel">Volver</button>
+            </form>
+            <div id="loginError" class="error"></div>
+        </div>
+
+        <div id="registerForm" style="display:none;" class="form-container">
+            <h2>Registrarse</h2>
+            <form onsubmit="handleRegister(event)">
+                <input type="text" id="registerName" placeholder="Nombre completo" required>
+                <input type="email" id="registerEmail" placeholder="Correo" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <input type="password" id="registerConfirm" placeholder="Confirmar contraseña" required>
+                <button type="submit" class="btn-primary">Registrarse</button>
+                <button type="button" onclick="showMenu()" class="btn-cancel">Volver</button>
+            </form>
+            <div id="registerError" class="error"></div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
